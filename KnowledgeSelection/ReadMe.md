@@ -6,6 +6,11 @@ Knowledge Selection Module: Identifying entities from dialogue history ,and extr
 $ pip install -r requirement.txt
 ```
 
+## Introduction
+The knowledge selection module includes NER model and IntentExtraction model.  
+The NER model identifies entities from the dialog history, which adopted the **Roberta-BiLSTM-CRF** framework.  
+The IntentExtraction model extracts the attributes of the entities, which was trained by using the supervised approach of **SimCSE**.
+
 ## Pretrained Model
 Download pretrained model from huggingface. We use chinese-roberta-base in this example.
 
@@ -60,4 +65,11 @@ python inference.py --mode="valid" \
 ## Inference
 ``` shell
 $ sh inference.sh
+```
+
+## Citations
+```
+[1] Liu Y, et al., RoBERTa: A Robustly Optimized BERT Pretraining Approach[J]. arXiv, 2019.
+[2] Huang Z, et.al., Bidirectional LSTM-CRF models for sequence tagging[J]. arXiv, 2015.
+[3] Gao T, et. Al., Simcse: Simple contrastive learning of sentence embeddings[J]. arXiv, 2021.
 ```
