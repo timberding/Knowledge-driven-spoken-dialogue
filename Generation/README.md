@@ -14,8 +14,10 @@
 
 ### Run
 + **Execute script**：
-  + **train script: `./train.sh`**：
-  + **inference script: `./inference.sh`**：
+  + **train script: `./train.sh`**
+  + **inference script: `./inference.sh`**
++ **inference output**
+  + **the output file in dir: `./baselinse_ch/to_test_test_by_selection.json`**
 
 
 
