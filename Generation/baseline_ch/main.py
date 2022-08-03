@@ -23,7 +23,6 @@ from transformers import (
     PreTrainedTokenizer,
     get_linear_schedule_with_warmup,
 )
-
 import sys
 sys.path.append(os.path.abspath(os.path.realpath(os.path.dirname(__file__))))
 
@@ -405,8 +404,7 @@ def main():
     # Evaluation
     result = {}
     if args.local_rank in [-1, 0]:
-        eval_dataset = dataset_class(dataset_args, tokenizer, split_type=args.eval_dataset, labels=not args.no_labels,
-                                     labels_file=args.labels_file)
+        eval_dataset = dataset_class(dataset_args, tokenizer, split_type=args.eval_dataset)
         result = evaluate(args, eval_dataset, model, tokenizer, run_batch_fn_eval, desc=args.eval_desc or "val")
 
     return result
