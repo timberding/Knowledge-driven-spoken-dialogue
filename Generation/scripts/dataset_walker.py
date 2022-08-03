@@ -17,7 +17,7 @@ class DatasetWalker(object):
             if "response" not in dialog.keys() or "history" not in dialog.keys() \
                 or "knowledge" not in dialog.keys() or "dialog_id" not in dialog.keys():
                 raise ValueError('error in data file: %s' % (dataset))
-            self.trains_data.extend(dialog)
+            self.trains_data.append(dialog)
 
     def __iter__(self):
         for dialog in self.trains_data:
