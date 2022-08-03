@@ -24,25 +24,30 @@ from transformers import (
     get_linear_schedule_with_warmup,
 )
 
-from .dataset import (
+import sys
+sys.path.append(os.path.abspath(os.path.realpath(os.path.dirname(__file__))))
+
+
+from dataset import (
     ResponseGenerationDataset,
     SPECIAL_TOKENS
 )
-from .utils.argument import (
+from utils.argument import (
     set_default_params,
     set_default_dataset_params,
     update_additional_params,
     verify_args
 )
-from .utils.model import (
+from utils.model import (
     run_batch_generation
 )
-from .utils.data import write_selection_preds, write_detection_preds
+from utils.data import write_selection_preds, write_detection_preds
 
 try:
     from torch.utils.tensorboard import SummaryWriter
 except ImportError:
     from tensorboardX import SummaryWriter
+
 
 logger = logging.getLogger(__name__)
 
