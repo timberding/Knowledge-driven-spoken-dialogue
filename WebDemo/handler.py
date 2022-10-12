@@ -48,7 +48,7 @@ class MainHandler(tornado.web.RequestHandler):
                                         ensure_ascii=False))
             return
         # TODO 业务逻辑代码
-        result = func(body)
+        result = func(data)
 
         # 返回结果报文
         self.write(simplejson.dumps(result, ensure_ascii=False))
