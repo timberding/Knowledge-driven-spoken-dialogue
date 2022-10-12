@@ -11,7 +11,7 @@ logging.basicConfig(
 logger = logging.getLogger(__file__)
 
 
-def func(body):
+def func(data):
     return dict(code=0, message="", attrs=[], response_des="success")
 
 
